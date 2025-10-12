@@ -32,7 +32,7 @@ offset_right = 1966.0
 offset_bottom = 1094.0
 
 [node name="Player" parent="." instance=ExtResource("1_80nbo")]
-position = Vector2(966, 538)
+position = Vector2(984, 539)
 
 [node name="Path2D" type="Path2D" parent="Player"]
 position = Vector2(-966, -538)
@@ -181,6 +181,19 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_eow3j")
 theme_override_font_sizes/font_size = 120
 script = ExtResource("5_ryrav")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 525.0
+offset_top = 638.0
+offset_right = 1525.0
+offset_bottom = 957.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_eow3j")
+theme_override_font_sizes/font_size = 40
+text = "WSAD TO MOVE 
+KILL AS MANY 
+OF SLIMES AS U CAN 
+"
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

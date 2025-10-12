@@ -1,13 +1,10 @@
 # Totato2
 
-Totato2 is a game developed using [Godot Engine](https://godotengine.org/), primarily written in GDScript and GDShader. This project is open source and welcomes contributions and feedback from the community!
+Totato2 is a game developed using [Godot Engine](https://godotengine.org/), primarily written in GDScript and GDShader. This project is open source and welcomes contributions and feedback from the community!Project for Siege hackclub project.I KNOW ITS BUGED FOR KNOW ALSO IT DOSNT HAVE COMITS COUSE ITS MY 3 REPO FOR THIS (SOMETHING BROKE WITH COMITING FROM 2 COMPUTERS)
 
 ## Table of Contents
 
 - [About](#about)
-- [Screenshots](#screenshots)
-- [Features](#features)
-- [Getting Started](#getting-started)
 - [Building and Running](#building-and-running)
 - [Controls](#controls)
 - [Contributing](#contributing)
@@ -15,19 +12,10 @@ Totato2 is a game developed using [Godot Engine](https://godotengine.org/), prim
 
 ## About
 
-Totato2 is an engaging game built to showcase fun gameplay mechanics and creative design. Whether you're a casual player or an enthusiast, Totato2 aims to deliver an enjoyable gaming experience.
+Totato2 is a game that is suposed to look like brotato in some time right now it is glitchy (geting stuck to the slime is intentional u have to use the trees to get rid of it).I KNOW ITS BUGED FOR KNOW ALSO IT DOSNT HAVE COMITS COUSE ITS MY 3 REPO FOR THIS (SOMETHING BROKE WITH COMITING FROM 2 COMPUTERS)
 
-## Features
 
-- Built with Godot Engine (GDScript and GDShader)
-- [List your main gameplay features here, such as:]
-  - Single-player/Multiplayer support
-  - Unique levels and challenges
-  - Custom shaders and visual effects
-  - Sound and music
-  - Save and load system
 
-## Getting Started
 
 ### Prerequisites
 
@@ -54,9 +42,8 @@ Totato2 is an engaging game built to showcase fun gameplay mechanics and creativ
 
 | Action        | Key / Button        |
 |---------------|---------------------|
-| Move          | [WASD] or [Arrow Keys] |
+| Move          | [WASD]  |
 
-*Replace the controls with your actual scheme.*
 
 ## Contributing
 
@@ -72,7 +59,3 @@ Contributions are welcome! If you'd like to improve the game, please fork the re
 
 This project is licensed under the [MIT License](LICENSE).  
 See the LICENSE file for more details.
-
----
-
-*Made with ❤️ using Godot Engine*
