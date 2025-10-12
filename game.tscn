@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3u84076due2"]
+[gd_scene load_steps=9 format=3 uid="uid://b3u84076due2"]
 
 [ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://d3jxeoqb2t4ma" path="res://game.gd" id="1_fc0e3"]
+[ext_resource type="Script" uid="uid://bxawvfcpive7r" path="res://global.gd" id="2_7jktm"]
 [ext_resource type="PackedScene" uid="uid://dq3r015sr1uql" path="res://pine_tree.tscn" id="2_e2o6t"]
+[ext_resource type="Script" uid="uid://bf3unhakd7pug" path="res://label.gd" id="5_ryrav"]
 
 [sub_resource type="Curve2D" id="Curve2D_7jktm"]
 _data = {
@@ -10,9 +12,27 @@ _data = {
 }
 point_count = 5
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_feb5d"]
+distance = 238.0
+
+[sub_resource type="FontFile" id="FontFile_7jktm"]
+cache/0/120/0/ascent = 0.0
+cache/0/120/0/descent = 0.0
+cache/0/120/0/underline_position = 0.0
+cache/0/120/0/underline_thickness = 0.0
+cache/0/120/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_fc0e3")
+
+[node name="Global" type="Node" parent="."]
+script = ExtResource("2_7jktm")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -30
@@ -33,45 +53,6 @@ curve = SubResource("Curve2D_7jktm")
 unique_name_in_owner = true
 position = Vector2(-174, -196)
 rotation = -0.012421722
-
-[node name="PineTree" parent="." instance=ExtResource("2_e2o6t")]
-position = Vector2(844, 600)
-
-[node name="PineTree2" parent="." instance=ExtResource("2_e2o6t")]
-position = Vector2(1218, 945)
-
-[node name="PineTree3" parent="." instance=ExtResource("2_e2o6t")]
-position = Vector2(577, 888)
-
-[node name="PineTree4" parent="." instance=ExtResource("2_e2o6t")]
-position = Vector2(1635, 752)
-
-[node name="PineTree5" parent="." instance=ExtResource("2_e2o6t")]
-position = Vector2(1205, 323)
-
-[node name="PineTree6" parent="." instance=ExtResource("2_e2o6t")]
-position = Vector2(289, 717)
-
-[node name="PineTree7" parent="." instance=ExtResource("2_e2o6t")]
-position = Vector2(593, 360)
-
-[node name="PineTree8" parent="." instance=ExtResource("2_e2o6t")]
-position = Vector2(1277, 317)
-
-[node name="PineTree9" parent="." instance=ExtResource("2_e2o6t")]
-position = Vector2(1238, 268)
-
-[node name="PineTree10" parent="." instance=ExtResource("2_e2o6t")]
-position = Vector2(1259, 894)
-
-[node name="PineTree11" parent="." instance=ExtResource("2_e2o6t")]
-position = Vector2(1238, 857)
-
-[node name="PineTree12" parent="." instance=ExtResource("2_e2o6t")]
-position = Vector2(1520, 923)
-
-[node name="PineTree13" parent="." instance=ExtResource("2_e2o6t")]
-position = Vector2(1635, 401)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
@@ -104,6 +85,113 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 120
 text = "Game Over"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(985, 1571)
+shape = SubResource("WorldBoundaryShape2D_feb5d")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-706, 703.0001)
+rotation = 1.6018474
+shape = SubResource("WorldBoundaryShape2D_feb5d")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(859.99994, -797.0001)
+rotation = 3.1254501
+shape = SubResource("WorldBoundaryShape2D_feb5d")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2706, 722)
+rotation = -1.5808278
+shape = SubResource("WorldBoundaryShape2D_feb5d")
+
+[node name="Tres" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="PineTree" parent="Tres" instance=ExtResource("2_e2o6t")]
+position = Vector2(844, 600)
+
+[node name="PineTree2" parent="Tres" instance=ExtResource("2_e2o6t")]
+position = Vector2(1218, 945)
+
+[node name="PineTree3" parent="Tres" instance=ExtResource("2_e2o6t")]
+position = Vector2(577, 888)
+
+[node name="PineTree4" parent="Tres" instance=ExtResource("2_e2o6t")]
+position = Vector2(1635, 752)
+
+[node name="PineTree5" parent="Tres" instance=ExtResource("2_e2o6t")]
+position = Vector2(1205, 323)
+
+[node name="PineTree6" parent="Tres" instance=ExtResource("2_e2o6t")]
+position = Vector2(289, 717)
+
+[node name="PineTree7" parent="Tres" instance=ExtResource("2_e2o6t")]
+position = Vector2(593, 360)
+
+[node name="PineTree8" parent="Tres" instance=ExtResource("2_e2o6t")]
+position = Vector2(1277, 317)
+
+[node name="PineTree9" parent="Tres" instance=ExtResource("2_e2o6t")]
+position = Vector2(1238, 268)
+
+[node name="PineTree10" parent="Tres" instance=ExtResource("2_e2o6t")]
+position = Vector2(1259, 894)
+
+[node name="PineTree11" parent="Tres" instance=ExtResource("2_e2o6t")]
+position = Vector2(1238, 857)
+
+[node name="PineTree12" parent="Tres" instance=ExtResource("2_e2o6t")]
+position = Vector2(1520, 923)
+
+[node name="PineTree13" parent="Tres" instance=ExtResource("2_e2o6t")]
+position = Vector2(1635, 401)
+
+[node name="PineTree14" parent="Tres" instance=ExtResource("2_e2o6t")]
+position = Vector2(130, 290)
+
+[node name="PineTree15" parent="Tres" instance=ExtResource("2_e2o6t")]
+position = Vector2(87, 591)
+
+[node name="PineTree16" parent="Tres" instance=ExtResource("2_e2o6t")]
+position = Vector2(401, 193)
+
+[node name="PineTree17" parent="Tres" instance=ExtResource("2_e2o6t")]
+position = Vector2(855, -75)
+
+[node name="PineTree18" parent="Tres" instance=ExtResource("2_e2o6t")]
+position = Vector2(66, -84)
+
+[node name="PineTree19" parent="Tres" instance=ExtResource("2_e2o6t")]
+position = Vector2(-90, 161)
+
+[node name="PineTree20" parent="Tres" instance=ExtResource("2_e2o6t")]
+position = Vector2(-83, 552)
+
+[node name="PineTree21" parent="Tres" instance=ExtResource("2_e2o6t")]
+position = Vector2(-74, 1039)
+
+[node name="PineTree22" parent="Tres" instance=ExtResource("2_e2o6t")]
+position = Vector2(309, 1031)
+
+[node name="PineTree23" parent="Tres" instance=ExtResource("2_e2o6t")]
+position = Vector2(1734, 1064)
+
+[node name="PineTree24" parent="Tres" instance=ExtResource("2_e2o6t")]
+position = Vector2(1883, -112)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 697.0
+offset_top = 74.0
+offset_right = 1113.6567
+offset_bottom = 364.39145
+rotation = 0.0014313647
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_7jktm")
+theme_override_font_sizes/font_size = 120
+script = ExtResource("5_ryrav")
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

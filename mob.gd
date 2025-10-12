@@ -15,6 +15,7 @@ func take_damage():
 	$Slime.play_hurt()
 
 	if health == 0:
+		Global.score += 1
 		queue_free()
 		const SMOKE_SCENE = preload("res://smoke_explosion/smoke_explosion.tscn")
 		var smoke = SMOKE_SCENE.instantiate()
