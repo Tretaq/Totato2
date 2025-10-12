@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://d3jxeoqb2t4ma" path="res://game.gd" id="1_fc0e3"]
 [ext_resource type="Script" uid="uid://bxawvfcpive7r" path="res://global.gd" id="2_7jktm"]
 [ext_resource type="PackedScene" uid="uid://dq3r015sr1uql" path="res://pine_tree.tscn" id="2_e2o6t"]
+[ext_resource type="FontFile" uid="uid://0mb3tk1bcy3r" path="res://smoke_explosion/PixelOperator8.ttf" id="5_eow3j"]
 [ext_resource type="Script" uid="uid://bf3unhakd7pug" path="res://label.gd" id="5_ryrav"]
 
 [sub_resource type="Curve2D" id="Curve2D_7jktm"]
@@ -14,18 +15,6 @@ point_count = 5
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_feb5d"]
 distance = 238.0
-
-[sub_resource type="FontFile" id="FontFile_7jktm"]
-cache/0/120/0/ascent = 0.0
-cache/0/120/0/descent = 0.0
-cache/0/120/0/underline_position = 0.0
-cache/0/120/0/underline_thickness = 0.0
-cache/0/120/0/scale = 1.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -189,7 +178,7 @@ offset_right = 1113.6567
 offset_bottom = 364.39145
 rotation = 0.0014313647
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("FontFile_7jktm")
+theme_override_fonts/font = ExtResource("5_eow3j")
 theme_override_font_sizes/font_size = 120
 script = ExtResource("5_ryrav")
 
