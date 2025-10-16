@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5uvqts8xnfr3"]
+
+[ext_resource type="Texture2D" uid="uid://di8usgqvxr3b0" path="res://characters/slime/16x16 Heart Health Red.png" id="1_01648"]
+[ext_resource type="Script" uid="uid://dhouf280i32df" path="res://health_pickup.gd" id="1_awyve"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_awyve"]
+radius = 37.01351
+
+[node name="HealthPickup" type="Area2D"]
+rotation = 0.005198567
+script = ExtResource("1_awyve")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5.6923075, 5.6923075)
+texture = ExtResource("1_01648")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 0
+visibility_layer = 4
+shape = SubResource("CircleShape2D_awyve")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

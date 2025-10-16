@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3u84076due2"]
+[gd_scene load_steps=10 format=3 uid="uid://b3u84076due2"]
 
 [ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://d3jxeoqb2t4ma" path="res://game.gd" id="1_fc0e3"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dq3r015sr1uql" path="res://pine_tree.tscn" id="2_e2o6t"]
 [ext_resource type="FontFile" uid="uid://0mb3tk1bcy3r" path="res://smoke_explosion/PixelOperator8.ttf" id="5_eow3j"]
 [ext_resource type="Script" uid="uid://bf3unhakd7pug" path="res://label.gd" id="5_ryrav"]
+[ext_resource type="PackedScene" uid="uid://c5uvqts8xnfr3" path="res://health_pickup.tscn" id="7_eow3j"]
 
 [sub_resource type="Curve2D" id="Curve2D_7jktm"]
 _data = {
@@ -42,6 +43,17 @@ curve = SubResource("Curve2D_7jktm")
 unique_name_in_owner = true
 position = Vector2(-174, -196)
 rotation = -0.012421722
+
+[node name="Label" type="Label" parent="Player"]
+offset_left = -187.0
+offset_top = -146.0
+offset_right = -57.7406
+offset_bottom = -26.0
+rotation = 0.0014313647
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_eow3j")
+theme_override_font_sizes/font_size = 50
+script = ExtResource("5_ryrav")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
@@ -171,17 +183,6 @@ position = Vector2(1734, 1064)
 [node name="PineTree24" parent="Tres" instance=ExtResource("2_e2o6t")]
 position = Vector2(1883, -112)
 
-[node name="Label" type="Label" parent="."]
-offset_left = 697.0
-offset_top = 74.0
-offset_right = 1113.6567
-offset_bottom = 364.39145
-rotation = 0.0014313647
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_eow3j")
-theme_override_font_sizes/font_size = 120
-script = ExtResource("5_ryrav")
-
 [node name="Label2" type="Label" parent="."]
 offset_left = 525.0
 offset_top = 638.0
@@ -194,6 +195,9 @@ text = "WSAD TO MOVE
 KILL AS MANY 
 OF SLIMES AS U CAN 
 "
+
+[node name="HealthPickup" parent="." instance=ExtResource("7_eow3j")]
+position = Vector2(608, 487)
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
