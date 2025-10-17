@@ -14,15 +14,15 @@ func shoot():
 		var new_bullet = BULLET.instantiate()
 		new_bullet.global_position = $WeaponPivot/Pistol/Shotingpoint.global_position
 		new_bullet.rotation = $WeaponPivot/Pistol/Shotingpoint.global_rotation
-		get_parent().add_child(new_bullet) # Add to the scene root
-		print(n)
+		get_parent().add_child(new_bullet)
+		
 		n += 1
 	else:
 		const BIG_BULLET = preload("res://big_bullet.tscn")
 		var new_big_bullet = BIG_BULLET.instantiate()
 		new_big_bullet.global_position = $WeaponPivot/Pistol/Shotingpoint.global_position
 		new_big_bullet.rotation = $WeaponPivot/Pistol/Shotingpoint.global_rotation
-		get_parent().add_child(new_big_bullet) # Add to the scene root
+		get_parent().add_child(new_big_bullet)
 		n = 1
 func _on_timer_timeout() -> void:
 	shoot()
