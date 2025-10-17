@@ -1,18 +1,21 @@
-[gd_scene load_steps=10 format=3 uid="uid://b3u84076due2"]
+[gd_scene load_steps=11 format=3 uid="uid://b3u84076due2"]
 
 [ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://d3jxeoqb2t4ma" path="res://game.gd" id="1_fc0e3"]
 [ext_resource type="Script" uid="uid://bxawvfcpive7r" path="res://global.gd" id="2_7jktm"]
 [ext_resource type="PackedScene" uid="uid://dq3r015sr1uql" path="res://pine_tree.tscn" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://cfgl2sy1xc7nm" path="res://rock_s.tscn" id="3_eow3j"]
 [ext_resource type="FontFile" uid="uid://0mb3tk1bcy3r" path="res://smoke_explosion/PixelOperator8.ttf" id="5_eow3j"]
 [ext_resource type="Script" uid="uid://bf3unhakd7pug" path="res://label.gd" id="5_ryrav"]
-[ext_resource type="PackedScene" uid="uid://c5uvqts8xnfr3" path="res://health_pickup.tscn" id="7_eow3j"]
 
 [sub_resource type="Curve2D" id="Curve2D_7jktm"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -174, -196, 0, 0, 0, 0, 2080, -224, 0, 0, 0, 0, 2093, 1184, 0, 0, 0, 0, -189, 1187, 0, 0, 0, 0, -174, -196)
 }
 point_count = 5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_eow3j"]
+blend_mode = 1
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_feb5d"]
 distance = 238.0
@@ -56,7 +59,7 @@ theme_override_font_sizes/font_size = 50
 script = ExtResource("5_ryrav")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 1.329
 autostart = true
 
 [node name="GameOver" type="CanvasLayer" parent="."]
@@ -90,6 +93,8 @@ text = "Game Over"
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("CanvasItemMaterial_eow3j")
+use_parent_material = true
 position = Vector2(985, 1571)
 shape = SubResource("WorldBoundaryShape2D_feb5d")
 
@@ -196,8 +201,17 @@ KILL AS MANY
 OF SLIMES AS U CAN 
 "
 
-[node name="HealthPickup" parent="." instance=ExtResource("7_eow3j")]
-position = Vector2(608, 487)
+[node name="RockS" parent="." instance=ExtResource("3_eow3j")]
+position = Vector2(115, 857)
+
+[node name="RockS2" parent="." instance=ExtResource("3_eow3j")]
+position = Vector2(846, 182)
+
+[node name="RockS3" parent="." instance=ExtResource("3_eow3j")]
+position = Vector2(1643, 110)
+
+[node name="RockS4" parent="." instance=ExtResource("3_eow3j")]
+position = Vector2(1961, 807)
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

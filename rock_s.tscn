@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfgl2sy1xc7nm"]
+
+[ext_resource type="Texture2D" uid="uid://bs2rjvsbu4blu" path="res://pistol/muzzle_flash/Rock Pile 1 - MOSSY - small.PNG" id="1_1i8xm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1i8xm"]
+radius = 51.0
+
+[node name="RockS" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("1_1i8xm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1i8xm")
