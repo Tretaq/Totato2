@@ -4,7 +4,7 @@ var traveled_distance = 0
 
 func _physics_process(delta):
     const SPEED = 1000
-    const RANGE = 1200
+    const RANGE = 33200
     var direction = Vector2.RIGHT.rotated(rotation)
     position += direction * SPEED * delta
 
@@ -12,7 +12,8 @@ func _physics_process(delta):
     if traveled_distance > RANGE:
         queue_free()
 
+
 func _on_body_entered(body):
     queue_free()
-    if body.has_method("take_damage"):
-        body.take_damage()
+    if body.has_method("take_big_damage"):
+        body.take_big_damage()

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dl2yyu7ksk8xt" path="res://pistol/change this image to.png" id="2_dk5gl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dk5gl"]
-radius = 629.5371
+radius = 663.12744
 
 [node name="Gun" type="Area2D"]
 position = Vector2(0, -2)
@@ -17,18 +17,17 @@ shape = SubResource("CircleShape2D_dk5gl")
 
 [node name="WeaponPivot" type="Marker2D" parent="."]
 position = Vector2(-1, 0)
-rotation = 0.09141515
 
 [node name="Pistol" type="Sprite2D" parent="WeaponPivot"]
-position = Vector2(115.87245, -17.651455)
-rotation = 0.6739169
+position = Vector2(113.00001, -2.0000029)
+rotation = 0.76821417
 scale = Vector2(0.0967634, 0.0967634)
 texture = ExtResource("2_dk5gl")
 
 [node name="Shotingpoint" type="Marker2D" parent="WeaponPivot/Pistol"]
 unique_name_in_owner = true
-position = Vector2(25.05503, -10.874077)
-rotation = 5.485358
+position = Vector2(296.2784, -228.78548)
+rotation = -0.8206769
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5

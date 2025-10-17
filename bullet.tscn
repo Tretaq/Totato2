@@ -4,17 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://dftkbqwsfd68r" path="res://pistol/projectile.png" id="2_t4vbm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2b2rl"]
-radius = 18.0
+radius = 16.094522
 
 [node name="Bullet" type="Area2D"]
 top_level = true
-rotation = 0.29370347
 collision_layer = 0
 collision_mask = 3
 script = ExtResource("1_v8qja")
 
 [node name="Projectile" type="Sprite2D" parent="."]
 position = Vector2(-11, -1)
+rotation = 0.08795937
 texture = ExtResource("2_t4vbm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
